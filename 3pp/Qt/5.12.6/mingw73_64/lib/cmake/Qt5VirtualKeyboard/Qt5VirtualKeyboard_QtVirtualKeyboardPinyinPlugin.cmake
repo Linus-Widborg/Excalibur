@@ -1,0 +1,7 @@
+
+add_library(Qt5::QtVirtualKeyboardPinyinPlugin MODULE IMPORTED)
+
+_populate_VirtualKeyboard_plugin_properties(QtVirtualKeyboardPinyinPlugin RELEASE "virtualkeyboard/qtvirtualkeyboard_pinyin.dll")
+_populate_VirtualKeyboard_plugin_properties(QtVirtualKeyboardPinyinPlugin DEBUG "virtualkeyboard/qtvirtualkeyboard_pinyind.dll")
+
+list(APPEND Qt5VirtualKeyboard_PLUGINS Qt5::QtVirtualKeyboardPinyinPlugin)

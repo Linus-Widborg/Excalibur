@@ -1,0 +1,7 @@
+
+add_library(Qt5::QtVirtualKeyboardTCImePlugin MODULE IMPORTED)
+
+_populate_VirtualKeyboard_plugin_properties(QtVirtualKeyboardTCImePlugin RELEASE "virtualkeyboard/qtvirtualkeyboard_tcime.dll")
+_populate_VirtualKeyboard_plugin_properties(QtVirtualKeyboardTCImePlugin DEBUG "virtualkeyboard/qtvirtualkeyboard_tcimed.dll")
+
+list(APPEND Qt5VirtualKeyboard_PLUGINS Qt5::QtVirtualKeyboardTCImePlugin)

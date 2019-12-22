@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 project(Excalibur)
 
 set(CMAKE_CXX_STANDARD 20)
-set(Qt5_DIR "C:/Qt/5.12.6/mingw73_64/lib/cmake/Qt5")
+set(Qt5_DIR "3pp/Qt/5.12.6/mingw73_64/lib/cmake/Qt5")
 add_subdirectory(test)
 
 find_package(Qt5 COMPONENTS Core Widgets REQUIRED)
