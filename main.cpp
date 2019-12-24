@@ -1,12 +1,24 @@
 #include <QApplication>
-#include <QPushButton>
+#include "src/MainWindow.h"
+#include "src/GameBoard.h"
+#include "src/Knight.h"
 
 int main(int argc, char** argv)
 {
-    QApplication app(argc, argv);
+    //  Q_INIT_RESOURCE(application);
 
-    QPushButton button("Hello world !");
-    button.show();
+    QApplication excaliburApplication(argc, argv);
+    QCoreApplication::setOrganizationName("Wumpuss Game Dev");
+    QCoreApplication::setApplicationName("Excalibur The Game");
+    QCoreApplication::setApplicationVersion(QT_VERSION_STR);
 
-    return app.exec();
+    MainWindow mainWindow;
+    mainWindow.resize(648, 900);
+    mainWindow.show();
+    GameBoard gameBoard(&mainWindow);
+    gameBoard.show();
+
+    Knight knight(&gameBoard);
+    knight.show();
+    return excaliburApplication.exec();
 }
