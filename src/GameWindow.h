@@ -3,16 +3,12 @@
 
 
 #include <QtWidgets/QWidget>
-#include "GameBoard.h"
 
 class GameWindow : public QWidget {
     Q_OBJECT
 
 public:
     explicit GameWindow(QWidget* parent = NULL);
-
-private:
-    GameBoard* gameBoard;
 };
 
 

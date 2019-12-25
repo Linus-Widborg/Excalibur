@@ -1,11 +1,12 @@
 #include <QApplication>
+#include <QtWidgets/QHBoxLayout>
 #include "src/MainWindow.h"
 #include "src/GameBoard.h"
 #include "src/Knight.h"
 
 int main(int argc, char** argv)
 {
-    //  Q_INIT_RESOURCE(application);
+    Q_INIT_RESOURCE(excalibur);
 
     QApplication excaliburApplication(argc, argv);
     QCoreApplication::setOrganizationName("Wumpuss Game Dev");
@@ -14,11 +15,10 @@ int main(int argc, char** argv)
 
     MainWindow mainWindow;
     mainWindow.resize(648, 900);
-    mainWindow.show();
     GameBoard gameBoard(&mainWindow);
-    gameBoard.show();
-
     Knight knight(&gameBoard);
-    knight.show();
+    mainWindow.setCentralWidget(&gameBoard);
+
+    mainWindow.show();
     return excaliburApplication.exec();
 }
