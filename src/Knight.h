@@ -1,19 +1,19 @@
 #ifndef EXCALIBUR_KNIGHT_H
 #define EXCALIBUR_KNIGHT_H
 
-#include <QtWidgets/QFrame>
+#include "Position.h"
 
-class QLabel;
-
-class Knight : public QFrame {
-    Q_OBJECT
+class Knight {
 public:
-    explicit Knight(QWidget* parent = nullptr);
+    Knight() = default;
+    explicit Knight(Position startPosition);
 
-    void dropEvent(QDropEvent* event);
-    void mousePressEvent(QMouseEvent *event);
-    void dragMoveEvent(QDragMoveEvent *event);
-    void dragEnterEvent(QDragEnterEvent *event);
+    bool atPosition(Position positionToCheck) const;
+    void move(Position position);
+
+private:
+    Position position;
+
 };
 
 

@@ -16,9 +16,7 @@ int main(int argc, char** argv)
     MainWindow mainWindow;
     mainWindow.resize(648, 900);
     GameBoard gameBoard(&mainWindow);
-    Knight knight(&gameBoard);
     mainWindow.setCentralWidget(&gameBoard);
-
     mainWindow.show();
     return excaliburApplication.exec();
 }
